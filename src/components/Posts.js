@@ -5,7 +5,7 @@ import React from 'react';
 const Posts = (props) => {
     return (
         <div>
-            Posts
+            {this.props.posts.map(post => <li key={post.id}>{post.title} {post.image_url} {post.content}</li>)}
         </div>
     )
 }
