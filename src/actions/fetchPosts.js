@@ -1,3 +1,5 @@
+//dispatches to the reducer and updates the redux store
+
 export const fetchPosts = () => {
     return (dispatch) => {
         // dispatch({ type: 'LOADING_POSTS'})

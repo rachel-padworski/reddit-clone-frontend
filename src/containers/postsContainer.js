@@ -15,7 +15,7 @@ class PostsContainer extends React.Component {
     render() {
         return (
             <div>
-                <PostInput />
+                <PostInput addPost={this.props.addPost}/>
                 <Posts posts={this.props.posts} />
             </div>
         )
@@ -23,7 +23,7 @@ class PostsContainer extends React.Component {
 
 }
 
-//to see it, we want to map the state to props. 
+//maps state to props
 //state is the state from the redux store
 const mapStateToProps = state => {
    return {

@@ -3,16 +3,14 @@ function postReducer(state = { posts: [] }, action) {
     switch(action.type) {
         case 'FETCH_POSTS':
             return {
-                ...state,
-                posts: [...state.posts],
-                loading: true 
+                posts: action.payload
             }
-        // case 'ADD_POST':
-        //     return {
-        //         ...state,
-        //         posts: action.posts,
-        //         loading: false
-        //     }
+        case 'ADD_POST':
+            return {
+                ...state,
+                posts: [...state.posts, action.payload]
+                // returning the original state of posts and the new post.
+            }
         default:
             return state;
     }
