@@ -8,7 +8,8 @@ class PostInput extends React.Component {
     state = {
         title: '',
         content: '',
-        image_url: ''
+        image_url: '',
+        user_id: ''
     }
 
     handleOnChange = (event) => {
@@ -23,7 +24,8 @@ class PostInput extends React.Component {
         this.setState({
             title: '',
             content: '',
-            image_url: ''
+            image_url: '',
+            user_id: ''
         })
     }
     
@@ -49,6 +51,12 @@ class PostInput extends React.Component {
                         placeholder="Copy/Paste your image URL here."
                         value={this.state.image_url} 
                         name="image_url"
+                        onChange={this.handleOnChange} /><br/>
+                    <input
+                        type="text"
+                        placeholder="user id"
+                        value={this.state.user_id} 
+                        name="user_id"
                         onChange={this.handleOnChange} /><br/>
                     <input type="submit" />
                 </form>

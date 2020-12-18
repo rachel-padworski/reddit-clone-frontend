@@ -1,5 +1,5 @@
 import React from 'react';
-import PostsContainer from './containers/postsContainer'
+import PostsContainer from './containers/PostsContainer'
 
 class App extends React.Component {
   
