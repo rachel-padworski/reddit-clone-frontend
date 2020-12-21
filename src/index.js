@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import postReducer from './reducers/postReducer';
+// import userReducer from './reducers/userReducer'; ***combine reducers
 
 import App from './App';
 

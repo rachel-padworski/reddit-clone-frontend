@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 //functional components have to pass props in as the argument instead of this.props 
 const Posts = (props) => {
     // everything we need from the component comes from postContainer
-    console.log(props)
     return (
         <div>
             {props.posts.map(post => 
@@ -17,7 +16,6 @@ const Posts = (props) => {
         </div>
     )
 }
-// key={post.id}
-// key={post.toString()} value={post}
+
 
 export default Posts;

@@ -5,6 +5,7 @@ import { fetchPosts } from '../actions/fetchPosts';
 import Posts from '../components/Posts';
 import PostInput from '../components/PostInput'
 import Post from '../components/Post';
+import Home from '../containers/Home';
 
 class PostsContainer extends React.Component {
 
@@ -21,7 +22,8 @@ class PostsContainer extends React.Component {
                 <Switch>
                     <Route path='/posts/new' component={PostInput} />
                     <Route path='/posts/:id' render={(routerProps) => <Post {...routerProps} posts={this.props.posts} /> } />
-                    <Route path='/posts' render={(routerProps) => <Posts {...routerProps} posts={this.props.posts} /> } />   
+                    <Route path='/posts' render={(routerProps) => <Posts {...routerProps} posts={this.props.posts} /> } /> 
+                    <Route path='/' component={Home} />
                 </Switch>
             </div>
         )

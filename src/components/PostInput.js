@@ -33,7 +33,7 @@ class PostInput extends React.Component {
         return(
             <div>
                 <form onSubmit={this.handleOnSubmit}>
-                    <label>Create A Post</label>
+                    <label>Create Post</label> <br/>
                     <input 
                         type="text" 
                         placeholder="Title"
