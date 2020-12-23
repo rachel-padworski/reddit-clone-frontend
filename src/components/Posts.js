@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom';
 //functional components have to pass props in as the argument instead of this.props 
 const Posts = (props) => {
     // everything we need from the component comes from postContainer
+    
     return (
         <div>
-            {props.posts.map(post => 
+            {props.posts && props.posts.map(post => 
             
                 <li key={post.id}>
                     <Link to={`/posts/${post.id}`}>{post.title}</Link>

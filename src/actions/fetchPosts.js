@@ -8,6 +8,7 @@ export const fetchPosts = () => {
             type: 'FETCH_POSTS',
             payload: posts
         }))
+        .catch(console.log)
     }
     
     
