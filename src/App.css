@@ -1,0 +1,137 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Roboto&display=swap');
+
+#nav {
+    background-color: rgb(43, 39, 39);
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+    font-family: 'Archivo Narrow', sans-serif;
+    border-radius: 5px;
+    list-style: none;
+}
+
+#link {
+    color: white;
+    padding: 10px 16px;
+    font-size: 20px;
+    text-decoration: none;
+    
+}
+
+#link:hover {
+    background-color: purple;
+}
+
+#post-links {
+    color: black;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 50px;
+    font-family: 'Archivo Narrow', sans-serif;
+    list-style: none;
+}
+
+#post-links:visited {
+    color: grey;
+}
+
+#post-links:hover {
+    color: rgb(143, 1, 143);
+}
+
+#post-form {
+    position: relative;
+    background-color: rgb(209, 209, 209);
+    font-size: 30px;
+    padding: 30px;
+    font-family: 'Archivo Narrow', sans-serif;
+    border-radius: 5px;
+
+}
+
+#comment-form {
+    position: relative;
+    background-color: rgb(209, 209, 209);
+    font-size: 20px;
+    padding: 30px;
+    font-family: 'Archivo Narrow', sans-serif;
+    border-radius: 5px;
+}
+
+
+#input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Archivo Narrow', sans-serif;
+    border-radius: 5px;
+
+}
+
+#input:hover {
+    border: 2px solid #555;
+}
+
+#input-text {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Archivo Narrow', sans-serif;
+    border-radius: 5px;
+}
+
+#input-text:hover {
+    border: 2px solid #555;
+}
+
+#button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    background-color: white;
+    color: rgb(43, 39, 39);
+    border-radius: 5px;
+    margin: 8px 0;
+    padding: 10px;
+    border: none;
+}
+
+#button:hover {
+    background-color: rgb(43, 39, 39);
+    color: white;
+}
+
+h2 {
+    font-size: 50px;
+    font-family: 'Archivo Narrow', sans-serif;
+
+}
+
+p {
+    font-size: 25px;
+    font-family: 'Archivo Narrow', sans-serif;
+    padding-bottom: 100px;
+}
+
+#comment {
+    font-size: 20px;
+    border: 2px;
+    list-style: none;
+    font-family: 'Archivo Narrow', sans-serif;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+#comment-button {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 16px;
+    background-color: rgb(43, 39, 39);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+}

@@ -1,11 +1,12 @@
-export const editComment = (content, commentId) => {
+export const editComment = (comment) => {
+    console.log(comment, "edit fetch")
     return (dispatch) => {
-        fetch(`http://localhost:3000/api/v1/comments/${commentId}`, {
+        fetch(`http://localhost:3000/api/v1/comments/${comment.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(content)
+            body: JSON.stringify(comment)
         })
         .then(response => response.json())
         .then(post => dispatch({ type: 'UPDATE_COMMENT', payload: post }))

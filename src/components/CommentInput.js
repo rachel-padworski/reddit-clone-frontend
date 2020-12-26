@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'; //dispatches the action to the reducer
 import { addComment } from '../actions/addComment';
-import { editComment } from '../actions/editComment';
 
 class CommentInput extends React.Component {
 
@@ -25,35 +24,27 @@ class CommentInput extends React.Component {
         })
     }
 
-    handleEdit = (event) => {
-        event.preventDefault()
-        // need the form to be filled with the comment that needs to be edited 
-        let comment = { ...this.state, id: this.props.comment.id}
-        this.props.editComment(comment)
-        this.setState({
-            content: '',
-            user_id: ''
-        })
-    }
 
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form id="comment-form" onSubmit={this.handleSubmit}>
                     <label>Leave a Comment:</label><br/>
-                    <input type="text" 
+                    <input id="input"
+                    type="text" 
                     placeholder="What are your thoughts?"
                     name="content" 
                     value={this.state.content} 
                     onChange={this.handleChange}/><br/>
-                    <input type="number"
+                    <input id="input"
+                    type="number"
                     placeholder="user id"
                     name="user_id"
                     value={this.state.user_id}
                     onChange={this.handleChange}
                     /><br/>
                    
-                    <input type="submit"/><br/>
+                    <input id="button" type="submit"/><br/>
                 </form>
             </div>
         )
@@ -61,8 +52,5 @@ class CommentInput extends React.Component {
 
 }
 
-// const mapDispatchToProps = state => ({
- 
-// })
 
-export default connect(null, { addComment, editComment })(CommentInput);
+export default connect(null, { addComment })(CommentInput);

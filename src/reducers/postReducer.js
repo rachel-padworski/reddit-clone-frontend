@@ -1,8 +1,9 @@
-// takes in the previous state and updates the state according the action type
+// takes in the previous state and updates the state according to the action type
 function postReducer(state = { posts: [] }, action) {
     switch(action.type) {
         case 'FETCH_POSTS':
             return {
+                ...state,
                 posts: action.payload
             }
         case 'ADD_POST':
@@ -28,6 +29,7 @@ function postReducer(state = { posts: [] }, action) {
                     return post 
                 }
             })    
+            console.log(postsTwo, "postReducer")
             return { ...state, posts: postsTwo }    
         case 'DELETE_COMMENT':
             let postsThree = state.posts.map(post => {

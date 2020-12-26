@@ -17,7 +17,7 @@ export const login = (credentials) => {
 export const signup = (credentials) => {
     return (dispatch) => {
         fetch('http://localhost:3000/api/v1/signup', {
-            credentials: "include",    
+            // credentials: "include",    
             headers: {
                 'Content Type': 'application/json'
             },

@@ -32,33 +32,33 @@ class PostInput extends React.Component {
     render(){
         return(
             <div>
-                <form onSubmit={this.handleOnSubmit}>
+                <form onSubmit={this.handleOnSubmit} id="post-form">
                     <label>Create Post</label> <br/>
-                    <input 
+                    <input id="input"
                         type="text" 
                         placeholder="Title"
                         value={this.state.title}
                         name="title"
                         onChange={this.handleOnChange} /><br/>
-                    <input
+                    <input id="input-text"
                         type="text"
                         placeholder="Text"
                         value={this.state.content} 
                         name="content"
                         onChange={this.handleOnChange} /><br/>
-                    <input
+                    <input id="input"
                         type="text"
                         placeholder="Copy/Paste your image URL here."
                         value={this.state.image_url} 
                         name="image_url"
                         onChange={this.handleOnChange} /><br/>
-                    <input
+                    <input id="input"
                         type="text"
                         placeholder="user id"
                         value={this.state.user_id} 
                         name="user_id"
                         onChange={this.handleOnChange} /><br/>
-                    <input type="submit" />
+                    <input id="button" type="submit" />
                 </form>
             </div>
         )

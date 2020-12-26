@@ -28,14 +28,14 @@ class PostsContainer extends React.Component {
             </div>
         )
     }
-
 }
 
 //maps state to props
 //state is the state from the redux store
 const mapStateToProps = state => {
+    console.log(state, "mapStateToProps")
    return {
-       posts: state.posts
+       posts: state.postReducer.posts
    }
 }
 
