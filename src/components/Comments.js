@@ -25,7 +25,7 @@ const Comments = (props) => {
                 {comment.content} <br/>
                 {comment.user_id} <br/>
                 <button id="comment-button" onClick={() => handleDelete(comment)}>Delete</button>
-                {/* <button id="button" onClick={() => handleEdit(comment)}>Edit</button> */}
+                {/* <button id="comment-button" onClick={() => handleEdit(comment)}>Edit</button> */}
             </li>    
         )}
     </div>

@@ -41,14 +41,14 @@ class PostInput extends React.Component {
                         name="title"
                         onChange={this.handleOnChange} /><br/>
                     <input id="input-text"
-                        type="text"
-                        placeholder="Text"
+                        type="textarea"
+                        placeholder="What do you have to say?"
                         value={this.state.content} 
                         name="content"
                         onChange={this.handleOnChange} /><br/>
                     <input id="input"
                         type="text"
-                        placeholder="Copy/Paste your image URL here."
+                        placeholder="Copy/Paste your image URL here"
                         value={this.state.image_url} 
                         name="image_url"
                         onChange={this.handleOnChange} /><br/>

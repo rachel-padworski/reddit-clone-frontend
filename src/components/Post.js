@@ -11,11 +11,11 @@ const Post = (props) => {
 
     return (
         <div>
-            <h2>
+            <h2 className="heading">
             {/* { post ? null : <Redirect to='/posts'/> }, */}
                 { post ? post.title : null } <br/>
             </h2>
-            <p>
+            <p className="content">
                 { post ? post.content : null } <br/>
                 {/* { post ? post.image_url : null }, <br/>
                 { post ? post.user_id : null } <br/> */}
