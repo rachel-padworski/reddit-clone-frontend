@@ -11,9 +11,9 @@ const Post = (props) => {
 
     return (
         <div>
-            <img id="post-img" src={post.image_url} alt={post.title} />
+            <img id="post-img" src={ post ? post.image_url : null } alt={ post ? post.title : null } />
             <h2 className="heading">
-            {/* { post ? null : <Redirect to='/posts'/> }, */}
+                {/* { post ? null : <Redirect to='/posts'/> }, */}
                 { post ? post.title : null } <br/>
             </h2>
             <p className="content">
@@ -22,6 +22,7 @@ const Post = (props) => {
                 { post ? post.user_id : null } <br/> */}
             </p>
             <CommentsContainer post={post} />
+            {/* how do i show the new comment here when submited?  */}
         </div>
     )
 };
