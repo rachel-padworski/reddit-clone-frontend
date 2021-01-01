@@ -11,6 +11,7 @@ const Post = (props) => {
 
     return (
         <div>
+            <img id="post-img" src={post.image_url} alt={post.title} />
             <h2 className="heading">
             {/* { post ? null : <Redirect to='/posts'/> }, */}
                 { post ? post.title : null } <br/>
