@@ -20,14 +20,17 @@ const Comments = (props) => {
 
     return (
     <div>
+        
         {props.comments && props.comments.map(comment =>
             <li key={comment.id} id="comment">
                 {comment.content} <br/>
-                {comment.user_id} <br/>
+                {/* {comment.user_id} <br/> */}
                 <button id="comment-button" onClick={() => handleDelete(comment)}>Delete</button>
                 {/* <button id="comment-button" onClick={() => handleEdit(comment)}>Edit</button> */}
-            </li>    
-        )}
+            </li>
+           
+           )}
+        {/* <Post comments={comments}/> */}
     </div>
     )
 

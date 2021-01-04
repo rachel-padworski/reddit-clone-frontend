@@ -29,7 +29,7 @@ function postReducer(state = { posts: [] }, action) {
                     return post 
                 }
             })    
-            console.log(postsTwo, "postReducer")
+            console.log(postsTwo, "edit comment in postReducer")
             return { ...state, posts: postsTwo }    
         case 'DELETE_COMMENT':
             let postsThree = state.posts.map(post => {

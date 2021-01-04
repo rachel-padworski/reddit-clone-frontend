@@ -9,8 +9,5 @@ export const fetchPosts = () => {
             payload: posts
         }))
         .catch(console.log)
-    }
-    
-    
-
+    }   
 }

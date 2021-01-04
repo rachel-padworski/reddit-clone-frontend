@@ -4,10 +4,10 @@ import React from 'react';
 import CommentsContainer from '../containers/CommentsContainer';
 
 const Post = (props) => {
-    
 
     let post = props.posts[props.match.params.id -1]
     // an array that accesses a specific element in an array. This allows us to access a post by an id
+    // let comments = props.comments
 
     return (
         <div>
@@ -16,6 +16,7 @@ const Post = (props) => {
                 {/* { post ? null : <Redirect to='/posts'/> }, */}
                 { post ? post.title : null } <br/>
             </h2>
+           
             <p className="content">
                 { post ? post.content : null } <br/>
                 {/* { post ? post.image_url : null }, <br/>
@@ -23,6 +24,7 @@ const Post = (props) => {
             </p>
             <CommentsContainer post={post} />
             {/* how do i show the new comment here when submited?  */}
+            {props.posts.comments}
         </div>
     )
 };
