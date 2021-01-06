@@ -17,33 +17,53 @@ export const sendSignup = (userData) => {
             body: JSON.stringify(userData)
         })
         .then(response => response.json())
-        .then(response => dispatch({
+        .then(response => {
+            localStorage.token = response.token
+            dispatch({
             type: "SET_USER",
             payload: {
                 user: response.user
             }
+            })
         })
-        )
-    
     }
 }
 
 export const sendLogin = (userData) => {
-    return (dispatch) => {
+    return dispatch => {
         fetch('http://localhost:3000/api/v1/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userData)
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
         })
         .then(response => response.json())
-        .then(response => dispatch({
+        .then(response => {
+            localStorage.token = response.token
+            dispatch({
             type: "SET_USER",
-            payload: {
-                user: response.user
-            }
-        }))
-    
+            payload: { user: response.user }
+            })
+        })
+    }
+}
+
+export const autoLogin = () => {
+    return dispatch => {
+        fetch("http://localhost:3000/api/v1/autologin", {
+            method: 'POST',
+            headers: {
+                'Authorization': localStorage.token,
+            },
+        })
+        .then(response => response.json())
+        .then(response => {
+            dispatch({
+            type: "SET_USER",
+            payload: {user: response.user}
+            })
+        })
+        .catch(error => console.log(error, "error from autoLogin fetch"))
     }
 }

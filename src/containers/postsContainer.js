@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { fetchPosts } from '../actions/fetchPosts';
+import { autoLogin } from '../actions/toggleSignup';
 import Posts from '../components/Posts';
 import PostInput from '../components/PostInput'
 import Post from '../components/Post';
@@ -12,6 +13,7 @@ class PostsContainer extends React.Component {
 
     //uses the fetchPosts function
     componentDidMount() {
+        localStorage.token && this.props.autoLogin()
         this.props.fetchPosts()
     }
 
@@ -37,13 +39,9 @@ class PostsContainer extends React.Component {
     }
 }
 
-// TO DO: hand posts down to user. I think this state isn't being passed to a user.
-
 //maps state to props
 //state is the state from the redux store
 const mapStateToProps = state => {
-    console.log(state.posts, "what's posts' state")
-    console.log(state.user, "what is the user state in msp")
     return {
        posts: state.posts.posts,
        user: state.user
@@ -51,4 +49,4 @@ const mapStateToProps = state => {
 }
 
 //{ fetchPosts } is equivalent to having a mapDispatchToProps function
-export default connect(mapStateToProps, { fetchPosts })(PostsContainer);
+export default connect(mapStateToProps, { fetchPosts, autoLogin })(PostsContainer);

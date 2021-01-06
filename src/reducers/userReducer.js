@@ -16,7 +16,6 @@ const userReducer = (state = initialState, action) => {
         case "TOGGLE_SIGNUP":
             return {...state, signup: !state.signup}
         case "LOGIN_FORM_CHANGE":
-            console.log("login form in userReducer")
             return {...state, loginForm: {
                 ...state.loginForm,
                 // if payload's name is "username", this will update the username key in the loginForm in state with the new payload value
@@ -24,11 +23,6 @@ const userReducer = (state = initialState, action) => {
             }}
         case "SET_USER":
             return {...state, ...action.payload.user}
-        // case 'SET_CURRENT_USER':
-        //     return {
-        //         ...state,
-        //         currentUser: action.payload
-        //     }
         // case 'CLEAR_CURRENT_USER':
         //     return null
         // case 'BEGIN_AUTH':   
