@@ -10,7 +10,7 @@
 * [Contributing](https://github.com/rachel-padworski/reddit-clone-frontend#contributing)
 * [License](https://github.com/rachel-padworski/reddit-clone-frontend#license)
 
-## NotePad
+# NotePad
 NotePad is a SPA (single page app) created with Ruby on Rails and React-Redux for users to create and comment on blog posts. It started as a Reddit Clone, but has since transformed. Backend [here](https://github.com/rachel-padworski/reddit-clone-backend).
 
 
