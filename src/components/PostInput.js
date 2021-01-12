@@ -13,14 +13,17 @@ class PostInput extends React.Component {
     }
 
     handleOnChange = (event) => {
+        console.log(2)
         this.setState({
-            [event.target.name]: event.target.value,
+            [event.target.name]: event.target.value
         })
     }
 
     handleOnSubmit = (event) => {
         event.preventDefault();
+        console.log(3)
         this.props.addPost(this.state);
+        console.log(4)
         this.setState({
             title: '',
             content: '',
@@ -30,6 +33,7 @@ class PostInput extends React.Component {
     }
     
     render(){
+        console.log(1)
         return(
             <div>
                 <form onSubmit={this.handleOnSubmit} id="post-form">

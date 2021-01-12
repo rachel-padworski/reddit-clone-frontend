@@ -2,31 +2,44 @@
 import React from 'react';
 // import { Redirect } from 'react-router-dom';
 import CommentsContainer from '../containers/CommentsContainer';
+import { connect } from 'react-redux';
+import { selectedPost } from '../actions/selectedPost'
 
-const Post = (props) => {
 
-    let post = props.posts[props.match.params.id -1]
-    // an array that accesses a specific element in an array. This allows us to access a post by an id
-    // let comments = props.comments
+class Post extends React.Component {
+    constructor(props) {
+        super()
+        this.post = props.posts[props.match.params.id -1]
+    }
+    // an array that accesses a specific element in an array. This allows us to access a this.post by an id
+    // let comment = this.props.this.posts[this.props.match.params.id -1].comments
 
-    return (
-        <div>
-            <img id="post-img" src={ post ? post.image_url : null } alt={ post ? post.title : null } />
-            <h2 className="heading">
-                {/* { post ? null : <Redirect to='/posts'/> }, */}
-                { post ? post.title : null } <br/>
-            </h2>
-           
-            <p className="content">
-                { post ? post.content : null } <br/>
-                {/* { post ? post.image_url : null }, <br/>
-                { post ? post.user_id : null } <br/> */}
-            </p>
-            <CommentsContainer post={post} />
-            {/* how do i show the new comment here when submited?  */}
-            {props.posts.comments}
-        </div>
-    )
+    componentDidMount = () => {
+        if (localStorage.selectedPost.id !== this.post.id){
+            this.props.selectedPost(this.post)
+        } else {
+            this.props.selectedPost(localStorage.selectedPost)
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <img id="this.post-img" src={ this.post ? this.post.image_url : null } alt={ this.post ? this.post.title : null } />
+                <h2 className="heading">
+                    { this.post ? this.post.title : null } <br/>
+                </h2>
+            
+                <p className="content">
+                    { this.post ? this.post.content : null } <br/>
+                </p>
+                    {/* { this.post ? null : <Redirect to='/this.posts'/> }, */}
+                <div className="comments">
+                    <CommentsContainer post={this.post}/>
+                </div>
+            </div>
+        )
+    }
 };
 
-export default Post;
+export default connect(null, { selectedPost })(Post);

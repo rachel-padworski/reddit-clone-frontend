@@ -3,8 +3,8 @@ import { connect } from 'react-redux'; //dispatches the action to the reducer
 import { addComment } from '../actions/addComment';
 
 class CommentInput extends React.Component {
-
-    state = {
+    
+    state =  {
         content: '',
         user_id: ''
     }
@@ -18,7 +18,6 @@ class CommentInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addComment({comment: {content: this.state.content, post_id: this.props.post.id, user_id: this.state.user_id} })
-        
         this.setState({
             content: '',
             user_id: ''
@@ -52,6 +51,8 @@ class CommentInput extends React.Component {
     }
 
 }
+
+
 
 
 export default connect(null, { addComment })(CommentInput);
